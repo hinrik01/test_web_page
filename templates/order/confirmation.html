@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="confirmation-step-container">
+    <h2>Confirmation step 3/3</h2>
+    <div class = "order-confirmation">
+        <h4>Order Placed!</h4>
+        <p>Order ID: {{ order.id }}</p>
+    </div>
+    <div class = "order-confirmation-details">
+        <h5>Order details</h5>
+        {% for item in items %}
+            <img class = "checkout-image" src={{ item.cereal.cerealimage_set.first.image }}>
+            <p style ='display: inline'> {{ item.cereal }}</p>
+            <p style = "float:right">Quantity: {{ item.quantity }}</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'cereal-index' %}" class="block btn btn-primary">Back to catalog</a>
+    </div>
+{% endblock %}

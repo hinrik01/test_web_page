@@ -1,0 +1,25 @@
+[run]
+omit =
+	*venv*
+	cart\__init__.py
+	cereal\__init__.py
+	order\__init__.py
+	ship_o_cereal\__init__.py
+	Home\__init__.py
+	user\__init__.py
+
+	Dashboard\admin.py
+	Dashboard\apps.py
+
+	*migrations*
+	Main\admin.py
+
+
+
+	Recipes\admin.py
+	Recipes\apps.py
+	API\tests.py
+	Dashboard\tests.py
+	Dietcalculator\tests.py
+	Main\tests.py
+	Recipes\tests.py

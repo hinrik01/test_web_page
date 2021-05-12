@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="review-step-container">
+    <h2>Review step 2/3</h2>
+    <br>
+    <div class = "order-details">
+    <h5>Order details</h5>
+    {% for item in items %}
+        <img class = "checkout-image" src="{{ item.cereal.cerealimage_set.first.image }}" alt="picture of the cereal">
+         <p style ='display: inline'> {{ item.cereal }}</p>
+        <p style = "float:right">Quantity: {{ item.quantity }}</p>
+        <br>
+    {% endfor %}
+    <br>
+    <h6>Total price: {{ total_price }} kr</h6>
+    </div>
+    <br>
+    <div class = "address-information">
+    <h4>Shipping address</h4>
+    <p>Street: {{ address.street }}</p>
+    <p>House number: {{ address.house_number }}</p>
+    <p>Postal code: {{ address.postal_code }}</p>
+    <p>City: {{ address.city }}</p>
+    <p>Country: {{ address.country }}</p>
+    </div>
+    <input type="button" value="Back" onclick="history.back()">
+    <a style = "float:right" href="{% url 'confirmation-step' %}" class="block btn btn-primary">Confirm Order</a>
+    </div>
+
+{% endblock %}

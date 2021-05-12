@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class = "catalog-container">
+    <div id = "search-bar-container">
+    <div class="input-group" id = "search-bar">
+        <input type="search" class="form-control" autocomplete="off" id="search-box" placeholder="Enter your cereal here..." />
+        <div class="input-group-btn">
+            <button type="button" id="search-btn" class="btn btn-default">Search</button>
+        </div>
+        <!--
+        <a href="{% url 'search-history'%}" class="block btn btn-primary">Search History</a>
+        !-->
+
+    </div>
+    {% if user.is_authenticated %}
+        <div id="search-history">
+            <div class="dropdown">
+                <div class="search-history-dropdown">
+                    <button class="dropbtn">Search history</button>
+                    <div class="dropdown-content">
+                        {% for search in searches %}
+                            <option class = "search_history_item" value="{{search.search_query }}">{{search.search_query}}</option>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+
+   <div class = 'cereal-filters-container'>
+        {% include 'cereal/cereal_filters.html' %}
+    </div>
+
+    <div class = 'cereals' style="">
+        {% for cereal in cereals %}
+            {% include 'cereal/singe_cereal.html' with cereal=cereal %}
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

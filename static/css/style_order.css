@@ -1,0 +1,56 @@
+.payment-step-container{
+    background-color: white;
+    margin-top: 50px;
+    padding:30px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.review-step-container{
+    background-color: white;
+    margin-top: 50px;
+    padding:30px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.confirmation-step-container{
+    background-color: white;
+    margin-top: 50px;
+    padding:30px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.order-details{
+    padding-top: 20px;
+    border-top:2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+}
+
+.checkout-image{
+    width:50px;
+}
+
+.address-information{
+    border-bottom:2px solid lightgrey;
+    margin-bottom: 20px;
+}
+
+.payment-information{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom:2px solid lightgrey;
+}
+
+.order-confirmation{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    border-top:2px solid lightgrey;
+}
+
+.order-confirmation-details{
+    padding-top: 20px;
+    border-top:2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}

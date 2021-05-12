@@ -1,0 +1,13 @@
+<div class = 'cereal'>
+    <a href = "/cereals/{{ cereal.id }}">
+        <img class ="cereal-img" src = "{{ cereal.cerealimage_set.first.image }}" alt="picture of the cereal">
+        <h5 class = 'cereal_name'>{{ cereal.name }}</h5>
+        <div class = 'cereal-attribute'>
+            <div> Price: {{ cereal.price }} ISK
+                    <br>
+                Sugar: {{ cereal.sugar }}/100g
+            </div>
+
+        </div>
+    </a>
+</div>

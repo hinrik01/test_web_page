@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="cereal-details">
+        <div class="cereal-details-img">
+            <img src = "{{ cereal.cerealimage_set.first.image }}" alt="picture of the cereal">
+        </div>
+
+        <div class="cereal-details-text">
+            <div class = "cereal-details-text-header">
+                <h2>{{ cereal.name }}</h2>
+                <div style="display: inline-block; margin-right: 30px">Price: {{ cereal.price }} ISK</div>
+                <div style="display: inline-block">Weight: {{ cereal.weight }}g</div>
+            </div>
+            <div class = "cereal-details-text-description">
+                <p>{{ cereal.description }}</p>
+            </div>
+            <div class="cereal-details-text-ingredients">
+                <h5>Ingredients:</h5>
+                <p>{{ cereal.ingredients }}</p>
+                <p>Sugar per 100g: {{ cereal.sugar }}g</p>
+            </div>
+        </div>
+
+
+        {% if user.is_superuser %}
+        <a href="{% url 'delete-cereal' cereal.id %}" class="block btn btn-primary">Delete Cereal</a>
+        <a href="{% url 'update-cereal' cereal.id %}" class="block btn btn-primary">Update Cereal</a>
+        {% endif %}
+
+        <br>
+        <form class="form form-horizontal" method="post" style="margin-top: 40px;width: 100%; text-align: right">
+            <input type="button" value="Back to catalog" style="float: left" onclick="location.href = {% url 'cereal-index' %}">
+            {% csrf_token %}
+            <label for="quantity">Quantity</label>
+            <input type="text" name="quantity" placeholder="1">
+            <input type="submit" class="btn btn-primary" name = 'buyproduct' value="Add to cart" />
+            <input type="submit" class="btn btn-primary" name = 'buyproduct' value="Buy now" />
+        </form>
+        </div>
+
+{% endblock %}

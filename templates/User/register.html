@@ -1,0 +1,12 @@
+{%  extends "base.html" %}
+{% block content %}
+    <div class = "register-login-page">
+        <h2>Sign up here</h2>
+            <br>
+        <form class="form form-horizontal" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Sign up" />
+        </form>
+    </div>
+{% endblock %}

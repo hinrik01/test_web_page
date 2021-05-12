@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="about-us-page">
+        <div class = 'text-container-about-us' style="background-color: white; display: inline-block; width: 45%; height: 30%">
+            <h1 style="font-size: 4em; margin-left: 10px">Contact us</h1>
+            <p style="font-size: 2em; margin-left: 10px">
+                Name: Ship O'Cereal <br>
+                Phone: 867-2234 <br>
+                Email: ShipO'Cereal@gmail.com <br>
+          <p/>
+        </div>
+        <img class = 'main-image' style="padding-left: 10%" src = "{% static 'images/cereals.jpeg' %}" alt="picture of cereals for decoration">
+    </div>
+{% endblock %}

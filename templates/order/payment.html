@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="payment-step-container">
+    <h2>Payment step 1/3</h2>
+    <div class="order-details">
+    <h5>Order details</h5>
+    {% for item in order_items %}
+        <img class = "checkout-image" src="{{ item.cereal.cerealimage_set.first.image }}" alt="picture of the cereal">
+        <p style ='display: inline'> {{ item.cereal }} </p>
+        <p style = "float:right">Quantity: {{ item.quantity }}</p>
+        <br>
+    {% endfor %}
+    <br>
+    <h6>Total price: {{ total_price }}</h6>
+    </div>
+
+    <br>
+
+    <form class="form form horizontal" action="{% url 'payment-step' %}" method="post">
+        {% csrf_token %}
+        <div class = "address-information">
+        <h5>Address information</h5>
+        {{ address_form }}
+        <div>
+        {% if not has_address %}
+            <input type="checkbox" name="save_address">
+            <label for="save_address">Save address to profile</label>
+        {% endif %}
+        </div>
+        <br>
+        </div>
+        <div class = "payment-information">
+            <h5>Payment information</h5>
+        {{ payment_form.as_p}}
+        {{ form.non_field_errors}}
+            </div>
+        <input type="button" value="Back" onclick="history.back()">
+        <input style = "float: right" type="submit" value="Continue" class="btn btn-primary" style="clear:both; margin: 10px 0" />
+
+    </form>
+
+
+    </div>
+{% endblock %}

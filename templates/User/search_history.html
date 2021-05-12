@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2>Your search history</h2>
+    <div class = 'searches'>
+        {% for search in searches %}
+            <h5>{{ search }}</h5>
+        {% endfor %}
+    </div>
+
+{% endblock %}

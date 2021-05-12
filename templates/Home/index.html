@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="home-page">
+    <div class = 'text-container-home-page'>
+        <h1 style = "width: 100%; font-size: 80px">Welcome to <br> Ship O'Cereal! </h1>
+        <b>
+            <p style="font-size: 1.3em">Where you’ll find every cereal <br> you ever dreamt of for <br> the right price!</p>
+        </b>
+        <a href="{% url 'login' %}" class="block btn btn-primary" style="margin-left: 10px; width: 200px; margin-bottom: 10px">Login</a>
+        <a href="{% url 'register' %}" class="block btn btn-primary" style="margin-left: 10px; width: 200px; margin-bottom: 10px">Register</a>
+    </div>
+    <img class = 'main-image' src = "{% static 'images/cereals.jpeg' %}" alt="picture of cereals for decoration">
+    </div>
+{% endblock %}

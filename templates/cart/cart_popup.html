@@ -1,0 +1,17 @@
+<div class="cart-popup">
+    <h2> Cart </h2>
+
+    <div class="cart-items-container" id="cart-items-container">
+        {% for item in data.cart_items %}
+            {% include 'cart/cart_item.html' with item=item %}
+        {% endfor %}
+    </div>
+
+    <div id="cart-total-price">
+        <h5>Total price: {{ data.total_price }} kr</h5>
+    </div>
+
+    <a style = 'padding:5px ' href="{% url 'cart' %}" class="block btn btn-secondary">View cart</a>
+    <a style = 'padding:5px ' href="{% url 'check-cart' %}" class="block btn btn-primary">Checkout</a>
+</div>
+

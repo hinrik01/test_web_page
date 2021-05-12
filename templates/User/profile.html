@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class = 'text-container'>
+        <div class = 'text-container-profile'>
+            <h2 class ='text-container-text'>Your Profile</h2>
+            <p class ='text-container-text'>Name: {{ profile.name }}</p>
+            <p class ='text-container-text'>Email: {{ profile.email }}</p>
+            <p class ='text-container-text'>Favorite cereal: {{ profile.favorite_cereal }}</p>
+            <a href="{% url 'edit-profile' %}" class="block btn btn-primary" style="margin-left: 20px; margin-top: 80px" >Edit profile</a>
+        </div>
+        <div class = 'text-container-address'>
+            <h2 class ='text-container-text'>Shipping Address</h2>
+            <p class ='text-container-text'>Street: {{ address.street }}</p>
+            <p class ='text-container-text'>House number: {{ address.house_number }}</p>
+            <p class ='text-container-text'>Postal code: {{ address.postal_code }}</p>
+            <p class ='text-container-text'>City: {{ address.city }}</p>
+            <p class ='text-container-text'>Country: {{ address.country }}</p>
+            <a href="{% url 'edit-address' %}" class="block btn btn-primary" style="margin-left: 10px; margin-bottom: 10px">Edit shipping address</a>
+            <a href="{% url 'delete-address' %}" class="block btn btn-primary" style="margin-bottom: 10px">Delete shipping address</a>
+        </div>
+        <img class = 'profile-image' src="{{ profile.profile_image }}" onerror="this.onerror=null; this.src='https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'" alt="Profile picture">
+    </div>
+{% endblock %}

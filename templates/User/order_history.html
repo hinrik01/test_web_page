@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="order-history">
+    <h2>Your order history</h2>
+    <br>
+    <div class = 'orders'>
+        {% for order in orders %}
+            {% include 'user/single_order.html' with order=order %}
+            <br>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

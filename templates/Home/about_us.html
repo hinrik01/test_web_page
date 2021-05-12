@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="about-us-page">
+    <div class = 'text-container-about-us'>
+        <h1>About us </h1>
+        <p>
+            Ship O'Cereal is a company founded by a great man by the name of Arnar Leifsson. Arnar entrusted his website in to the hands of students
+            currently studying at the University of Reykjavík. This is group 41's implementation for this project. The group worked tirelessly on the
+            website to have functionality as well as a beautiful design.
+        <p/>
+        <p>
+            Group 41 is composed of four members, three of which are studying computer science and one that is studying software engineering. The members are Andrea
+            Einarsdóttir, Atli Karl Sigurbjartsson, Hermann Guðmundsson and Hinrik Pétur Jóhannsson.
+        </p>
+    </div>
+    <img class = 'main-image' src = "{% static 'images/cereals.jpeg' %}" alt="picture of cereals for decoration" >
+    </div>
+{% endblock %}

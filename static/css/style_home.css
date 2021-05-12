@@ -1,0 +1,44 @@
+.main-image{
+    width: 30%;
+}
+
+.about-us-page{
+    display: flex;
+}
+
+.text-container-about-us{
+    width:70%;
+    margin-top:50px;
+    padding-right: 30px;
+    text-align: justify;
+}
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
+.logo{
+    height:30px
+}
+
+.home-page{
+    display: flex;
+}
+
+.text-container-home-page{
+    width:70%;
+    padding-right: 30px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.container{
+    min-height:780px
+}
+
+.disabled{
+    display: None;
+}

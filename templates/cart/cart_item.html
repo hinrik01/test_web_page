@@ -1,0 +1,10 @@
+<div class="cart-item-container" >
+    <img class ="cart-item-image" src = "{{ item.cereal_image }}" alt="picture of the cereal">
+
+    <h6 class="cart-item-name">{{ item.cereal_name }}</h6>
+
+    <div class="cart-item-quantity-container">
+        <input  class="cart-item-quantity" type="number" name="quantity" data-cereal-id="{{ item.cereal_id }}" value="{{ item.quantity }}" style="width: 40px">
+        <button class="cart-item-delete-btn" data-cereal-id="{{ item.cereal_id }}" >Delete</button>
+    </div>
+</div>

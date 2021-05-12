@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ship O'Cereal</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <link rel="stylesheet" href = "{% static 'css/style_cereal.css' %}" />
+    <link rel="stylesheet" href = "{% static 'css/style_base.css' %}" />
+    <link rel="stylesheet" href = "{% static 'css/style_cart.css' %}" />
+    <link rel="stylesheet" href = "{% static 'css/style_home.css' %}" />
+    <link rel="stylesheet" href = "{% static 'css/style_order.css' %}" />
+    <link rel="stylesheet" href = "{% static 'css/style_user.css' %}" />
+
+</head>
+<body style = 'background-color:#F2F2F2'>
+    {% include 'navigation.html' %}
+
+    <div class="collapse" id="cart-collapse">
+        {% include 'cart/cart_popup.html' %}
+    </div>
+
+    <div class = 'container'>
+       {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'footer.html' %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="{% static 'js/cereals.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
+</body>
+</html>
